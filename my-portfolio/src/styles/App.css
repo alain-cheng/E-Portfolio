@@ -4,19 +4,17 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
   justify-content: center;
+  color: #F1E0C5;
 }
 
 .App-header {
   min-height: 250px;
   min-width: 761px;
   display: flex;
-  text-align: center;
   align-items: center;
   justify-content: center;
-  color: #F1E0C5;
 }
 
 .Header-text {
@@ -26,28 +24,16 @@
   text-align: right;
 }
 
-.Ht-main {
+.Header-text__main {
   font-size: 75px;
 }
 
-.Ht-sub {
+.Header-text__sub {
   font-size: 30px;
   margin-top: -20px;
 }
 
-.Ht-desc {
+.Header-text__desc {
   font-size: 20px;
   margin: 20px 0 0 0;
-}
-
-.Socials-group {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  margin-top: 41px;
-}
-
-.Socials-group > img {
-  margin: 0 5px 0 5px;
 }

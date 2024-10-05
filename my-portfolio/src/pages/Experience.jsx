@@ -1,6 +1,6 @@
 import React from "react";
 
-function Contacts() {
+function Experience() {
     return(
         <div>
             <h1>Contacts</h1>
@@ -9,4 +9,4 @@ function Contacts() {
     )
 }
 
-export default Contacts;
+export default Experience;
