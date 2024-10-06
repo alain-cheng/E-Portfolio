@@ -1,12 +1,27 @@
+:root {
+  --background-color: #0E0C18;
+  --background-secondary-color: #1A1824;
+  --text-color: #F1E0C5;
+  --highlight-color: #7E50FD;
+  --highlight-color-2: #CE6095;
+  --highlight-color-3: #584F85;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
 .App {
-  background-color: #0E0C18;
+  background-color: var(--background-color);
   min-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #F1E0C5;
 }
 
 .App-header {
@@ -22,10 +37,18 @@
   min-width: 473px;
   margin: 0 38px 0 0;
   text-align: right;
+
 }
 
 .Header-text__main {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
   font-size: 75px;
+}
+
+.highlight1 {
+  font-weight: 700;
+  color: var(--highlight-color);
 }
 
 .Header-text__sub {
@@ -36,4 +59,13 @@
 .Header-text__desc {
   font-size: 20px;
   margin: 20px 0 0 0;
+}
+
+.highlight2 {
+  font-weight: 700;
+}
+
+.Header-text__sub, .Header-text__desc {
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
 }

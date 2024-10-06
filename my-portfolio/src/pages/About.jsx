@@ -1,5 +1,5 @@
-import React from "react";
-import * as motion from "framer-motion/client"
+import * as React from 'react';
+import * as motion from "framer-motion/client";
 // assets
 import headerImg from "../assets/header_img.png";
 // components

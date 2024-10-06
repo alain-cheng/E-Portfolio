@@ -5,14 +5,14 @@ const Header = ({ headerImg }) => {
         <header className="App-header">
           <div className="Header-text">
             <div className="Header-text__main">
-              Hello Im <b>Alain</b>!
+              Hello Im <b className="highlight1">Alain</b>!
             </div>
             <div className="Header-text__sub">
-              an <b>Undergraduate Student</b>
+              an <b className="highlight2">Undergraduate Student</b>
             </div>
             <div className="Header-text__desc">
-              I major in <b>Computer Science</b>, specializing in <br/>
-              <b>Software Technology</b>. I am also studying at <br/>
+              I major in <b className="highlight2">Computer Science</b>, specializing in <br/>
+              <b className="highlight2">Software Technology</b>. I am also studying at <br/>
               De La Salle University, Manila, Philippines.
             </div>
           </div>
