@@ -34,6 +34,7 @@ function Projects() {
                         img={project.img}
                         body={project.body}
                         tags={project.tags}
+                        url={project.url}
                     />
                 </motion.div>
             ))}
