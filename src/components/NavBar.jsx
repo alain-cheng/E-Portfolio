@@ -7,7 +7,7 @@ import Projects from '../pages/Projects';
 
 
 export default function NavBar() {
-    const [visible, setVisible] = React.useState(false);
+    const [visible, setVisible] = React.useState(true);
     const [lastScrollY, setLastScrollY] = React.useState(0);
 
     const activeStyle = {
@@ -55,7 +55,7 @@ export default function NavBar() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            width: '761px',
+                            width: '50vw',
                             height: '7vh',
                         }}
                     >
@@ -66,6 +66,7 @@ export default function NavBar() {
                 </Box>
                 <Routes>
                     <Route path="/" element={<Navigate to="/About"/>}/>
+                    <Route path="/E-Portfolio" element={<Navigate to="/About"/>}/>
                     <Route path="/About" element={<About/>}/>
                     <Route path="/Projects" element={<Projects/>}/>
                     <Route path="/Experience" element={<Experience/>}/>

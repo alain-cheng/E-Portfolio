@@ -26,7 +26,7 @@ body {
 
 .App-header {
   min-height: 250px;
-  min-width: 761px;
+  min-width: 50vw; /*761px*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +34,7 @@ body {
 
 .Header-text {
   min-height: 206px;
-  min-width: 473px;
+  min-width: 30vw; /*473px */
   margin: 0 38px 0 0;
   text-align: right;
 
@@ -43,7 +43,7 @@ body {
 .Header-text__main {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  font-size: 75px;
+  font-size: 75px; /*75px*/
 }
 
 .highlight1 {
@@ -52,7 +52,7 @@ body {
 }
 
 .Header-text__sub {
-  font-size: 30px;
+  font-size: 30px; /*30px*/
   margin-top: -20px;
 }
 
@@ -63,9 +63,14 @@ body {
 
 .highlight2 {
   font-weight: 700;
+  color: var(--highlight-color);
 }
 
 .Header-text__sub, .Header-text__desc {
   font-family: 'Merriweather', serif;
   font-weight: 300;
+}
+
+.Header-image img {
+  width: 16.276vw;
 }

@@ -2,7 +2,7 @@ import * as React from "react";
 import * as motion from "framer-motion/client";
 
 const iconVariants = {
-    hover: {scale: 1.2},
+    hover: {scale: 1.2, y: -5},
     tap: {scale: 1},
 }
 

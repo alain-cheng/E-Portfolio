@@ -23,6 +23,10 @@ Hello World!
 
 To start:
 ```bash
-cd my-portfolio
 npm start
+```
+
+Deploy to gh-pages:
+```bash
+npm run deploy
 ```

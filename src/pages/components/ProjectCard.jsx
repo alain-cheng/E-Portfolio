@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as motion from "framer-motion/client";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Box, Chip, Card, CardActions, CardContent, Typography } from '@mui/material';
+import { Box, Chip, Card, CardContent, Typography } from '@mui/material';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 const ProjectCard = ({ title, img, body, tags, url }) => {
@@ -51,16 +51,22 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                 <Typography variant="body2" sx={{ color: 'var(--text-color)', marginTop: '8px' }}>
                     {body}
                 </Typography>
+                <Box
+                    sx={{
+                        margin: '1em 0 0 0',
+                    }}
+                >
+                    {tags.map((tag, index) => 
+                        <Chip 
+                            sx={{ margin: '0.3em 0.3em' }}
+                            label={tag} 
+                            key={index} 
+                            color='primary'
+                        />
+                    )}
+                </Box>
             </CardContent>
-            <CardActions>
-                {tags.map((tag, index) => 
-                    <Chip 
-                        label={tag} 
-                        key={index} 
-                        color='primary'
-                    />
-                )}
-            </CardActions>
+
         </ThemeProvider>
     )
     
@@ -72,39 +78,74 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                     position: 'absolute',
                     top: 0,
                     right: 0,
-                    maxWidth: '240px',
+                    width: '16vw',
                     borderRadius: '8px',
+                    // [theme.breakpoints.down('sm')]: { // temp
+                    //     display: 'none',
+                    // },
+                    '@media (max-width: 1200px)': {
+                        display: 'none',
+                    },
+                    zIndex: 1,
                 }}
-                alt="Placeholder"
+                alt="thumbnail"
                 src={img}
             />
         </React.Fragment>
     )
 
     return(
-        <motion.div>
+        <motion.div
+            animate={{
+                scale: isHovered ? 1.05 : 1,
+                transition: '0.5s',
+            }}
+        >
             <Box 
                 sx={{ 
                     position: 'relative',
                     display: 'flex',
+                    flexDirection: 'row',
                     justifyContent: 'space-between',
-                    minWidth: '761px',
                     margin: '30px 0',
+                    width: '50vw',
                 }}
             >
-                <Box sx={{ width: '494px', }} >
+                <Box 
+                    sx={{ 
+                        width: '494px',
+                    }} 
+                >
                     <Card 
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                         onClick={handleClick}
                         sx={{
-                            backgroundColor: 'var(--background-secondary-color)', 
+                            position: 'relative',
+                            backgroundColor: 'var(--background-secondary-color)',
+                            '@media (max-width: 1200px)': {
+                                backgroundImage: `url(${img})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundBlendMode: 'soft-light',
+                                backgroundColor: 'rgba(26, 24, 36, 1.0)',
+                            },
+                            // [theme.breakpoints.down('sm')]: { // temp
+                            //     backgroundImage: `url(${img})`,
+                            //     backgroundSize: 'cover',
+                            //     backgroundPosition: 'center',
+                            //     backgroundRepeat: 'no-repeat',
+                            //     backgroundBlendMode: 'soft-light',
+                            //     backgroundColor: 'rgba(26, 24, 36, 1.0)'
+                            // },
                             border: '1px solid var(--highlight-color)', 
                             transition: '0.5s',
                             ":hover": {
                                 border: '1px solid var(--highlight-color-2)',
                             },
                             cursor: 'pointer',
+                            zIndex: 500,
                         }}
                     >
                         {card}
