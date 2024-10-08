@@ -21,7 +21,15 @@ function Projects() {
 
     return(
         // Page Container
-        <Box sx={{ marginTop: '25vh', width: '50vw', display: 'flex', flexDirection: 'column'}}>
+        <Box 
+            id='Projects' 
+            sx={{ 
+                margin: '25vh 0', 
+                width: '50%', 
+                display: 'flex', 
+                flexDirection: 'column'
+            }}
+        >
             {projectList.map((project, index) => (
                 <motion.div
                     initial="offscreen"

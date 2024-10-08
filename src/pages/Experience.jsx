@@ -1,11 +1,17 @@
+import { Box } from "@mui/material";
 import React from "react";
 
 function Experience() {
     return(
-        <div>
-            <h1>Contacts</h1>
+        <Box 
+            id='Experience'
+            sx={{
+                margin: '25vh 0',
+            }}
+        >
+            <h1>Experience</h1>
             <p>Hello World!!!</p>
-        </div>
+        </Box>
     )
 }
 

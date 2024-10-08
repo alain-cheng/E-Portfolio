@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate, NavLink } from "react-router-dom"
+//import { BrowserRouter as Router, Route, Routes, Navigate, NavLink } from "react-router-dom"
 import { Box, Button, Container } from '@mui/material';
-import About from '../pages/About';
-import Experience from '../pages/Experience';
-import Projects from '../pages/Projects';
+// import About from '../pages/About';
+// import Experience from '../pages/Experience';
+// import Projects from '../pages/Projects';
 
 
 export default function NavBar() {
@@ -28,6 +28,14 @@ export default function NavBar() {
         }
     };
 
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        section?.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start',
+        });
+    }
+
     React.useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -36,41 +44,32 @@ export default function NavBar() {
     }, [lastScrollY]);
 
     return(
-        <Router>
-                <Box
-                    sx={{
-                        minWidth: '100vw',
-                        minHeight: '7vh',
-                        backgroundColor: 'rgba(14, 12, 24, 0.7)', // hex #0E0C18
-                        backdropFilter: 'blur(5px)',
-                        zIndex: 1000,
-                        position: 'fixed',
-                        boxShadow: '1px 0px 9px black',
-                        transition: '0.5s',
-                        top: visible ? '0' : '-80px',
-                    }}
-                >
-                    <Container
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            width: '50vw',
-                            height: '7vh',
-                        }}
-                    >
-                        <Button component={NavLink} to='/About' variant='text' style={({ isActive }) => (isActive ? activeStyle : inactiveStyle)}>About Me</Button>
-                        <Button component={NavLink} to='/Projects' variant='text' style={({ isActive }) => (isActive ? activeStyle : inactiveStyle)}>My Projects</Button>
-                        <Button component={NavLink} to='/Experience' variant='text' style={({ isActive }) => (isActive ? activeStyle : inactiveStyle)}>Experience</Button>
-                    </Container>
-                </Box>
-                <Routes>
-                    <Route path="/" element={<Navigate to="/About"/>}/>
-                    <Route path="/E-Portfolio" element={<Navigate to="/About"/>}/>
-                    <Route path="/About" element={<About/>}/>
-                    <Route path="/Projects" element={<Projects/>}/>
-                    <Route path="/Experience" element={<Experience/>}/>
-                </Routes>
-        </Router>
+        <Box
+            sx={{
+                minWidth: '100vw',
+                minHeight: '7vh',
+                backgroundColor: 'rgba(14, 12, 24, 0.7)', // hex #0E0C18
+                backdropFilter: 'blur(5px)',
+                zIndex: 1000,
+                position: 'fixed',
+                boxShadow: '1px 0px 9px black',
+                transition: '0.5s',
+                top: visible ? '0' : '-80px',
+            }}
+        >
+            <Container
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    width: '50vw',
+                    height: '7vh',
+                }}
+            >
+                <Button variant='text' onClick={() => scrollToSection('About')}>About Me</Button>
+                <Button variant='text' onClick={() => scrollToSection('Projects')}>My Projects</Button>
+                <Button variant='text' onClick={() => scrollToSection('Experience')}>Experience</Button>
+            </Container>
+        </Box>
     );
 }
