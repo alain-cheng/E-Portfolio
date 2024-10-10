@@ -1,23 +1,18 @@
 import * as React from 'react';
-//import { BrowserRouter as Router, Route, Routes, Navigate, NavLink } from "react-router-dom"
 import { Box, Button, Container } from '@mui/material';
-// import About from '../pages/About';
-// import Experience from '../pages/Experience';
-// import Projects from '../pages/Projects';
-
 
 export default function NavBar() {
     const [visible, setVisible] = React.useState(true);
     const [lastScrollY, setLastScrollY] = React.useState(0);
 
-    const activeStyle = {
-        color: 'var(--highlight-color)',
-        fontWeight: 'bold',
-    };
+    // const activeStyle = {
+    //     color: 'var(--highlight-color)',
+    //     fontWeight: 'bold',
+    // };
 
-    const inactiveStyle = {
-        color: 'var(--text-color)',
-    };
+    // const inactiveStyle = {
+    //     color: 'var(--text-color)',
+    // };
 
     const handleScroll = () => {
         if (typeof window !== "undefined") {
@@ -68,7 +63,8 @@ export default function NavBar() {
             >
                 <Button variant='text' onClick={() => scrollToSection('About')}>About Me</Button>
                 <Button variant='text' onClick={() => scrollToSection('Projects')}>My Projects</Button>
-                <Button variant='text' onClick={() => scrollToSection('Experience')}>Experience</Button>
+                <Button variant='text' onClick={() => scrollToSection('Extra')}>Extra</Button>
+                <Button variant='outlined'>Resume</Button>
             </Container>
         </Box>
     );

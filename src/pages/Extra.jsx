@@ -1,18 +1,18 @@
 import { Box } from "@mui/material";
 import React from "react";
 
-function Experience() {
+function Extra() {
     return(
         <Box 
-            id='Experience'
+            id='Extra'
             sx={{
                 margin: '25vh 0',
             }}
         >
-            <h1>Experience</h1>
-            <p>Hello World!!!</p>
+            <h1>Extra</h1>
+            <p>stuff about me</p>
         </Box>
     )
 }
 
-export default Experience;
+export default Extra;

@@ -24,7 +24,7 @@ function Projects() {
         <Box 
             id='Projects' 
             sx={{ 
-                margin: '25vh 0', 
+                margin: '0vh 0', 
                 width: '50%', 
                 display: 'flex', 
                 flexDirection: 'column'

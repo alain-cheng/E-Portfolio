@@ -12,8 +12,8 @@ const Header = ({ headerImg }) => {
             </div>
             <div className="Header-text__desc">
               I major in <b className="highlight2">Computer Science</b>, specializing in <br/>
-              <b className="highlight2">Software Technology</b>. I am also studying at <br/>
-              De La Salle University, Manila, Philippines.
+              <b className="highlight2">Software Technology</b>. I currently study at <br/>
+              De La Salle University, Manila.
             </div>
           </div>
           <div className="Header-image">
