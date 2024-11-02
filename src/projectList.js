@@ -1,6 +1,7 @@
 import placeholder from "./assets/Thumbnail.svg"
 import gcakes from "./assets/thumbnails/gcakes.png"
 import donut from "./assets/thumbnails/donuteating.png"
+import taboo from "./assets/thumbnails/taboo.jpg"
 
 export const projectList = [
     {   
@@ -26,7 +27,7 @@ export const projectList = [
     },
     {   
         title: "Taboo",
-        img: placeholder,
+        img: taboo,
         body: "A mobile game our team developed for our mobile development course. Taboo features a very simple retro-style dungeon gameplay experience, developed using the Godot game engine and Android Studio, leveraging both Java and GDScript. I served as a frontend developer and designer, focusing on the user interface and scripting game mechanics and physics. Additionally I contributed as a secondary artist, using my experience as a self-taught illustrator with Clip Studio Paint.",
         tags: ["Android Studio", "Java", "Godot", "GDScript"],
         url: "https://github.com/alain-cheng/MOBDEVE-MP",

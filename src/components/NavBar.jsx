@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Box, Button, Container } from '@mui/material';
+import Pdf from '../assets/Resume.pdf';
 
 export default function NavBar() {
     const [visible, setVisible] = React.useState(true);
@@ -29,6 +30,10 @@ export default function NavBar() {
             behavior: 'smooth',
             block: 'start',
         });
+    }
+
+    const showPDF = () => {
+        window.open(Pdf, "_blank")
     }
 
     React.useEffect(() => {
@@ -64,7 +69,7 @@ export default function NavBar() {
                 <Button variant='text' onClick={() => scrollToSection('About')}>About Me</Button>
                 <Button variant='text' onClick={() => scrollToSection('Projects')}>My Projects</Button>
                 <Button variant='text' onClick={() => scrollToSection('Extra')}>Extra</Button>
-                <Button variant='outlined'>Resume</Button>
+                <Button variant='outlined' onClick={() => showPDF()}>Resume</Button>
             </Container>
         </Box>
     );
