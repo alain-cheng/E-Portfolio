@@ -6,15 +6,6 @@ export default function NavBar() {
     const [visible, setVisible] = React.useState(true);
     const [lastScrollY, setLastScrollY] = React.useState(0);
 
-    // const activeStyle = {
-    //     color: 'var(--highlight-color)',
-    //     fontWeight: 'bold',
-    // };
-
-    // const inactiveStyle = {
-    //     color: 'var(--text-color)',
-    // };
-
     const handleScroll = () => {
         if (typeof window !== "undefined") {
             const scrollY = window.scrollY;
@@ -48,13 +39,16 @@ export default function NavBar() {
             sx={{
                 minWidth: '100vw',
                 minHeight: '7vh',
-                backgroundColor: 'rgba(14, 12, 24, 0.7)', // hex #0E0C18
+                backgroundColor: 'rgba(14, 12, 24, 0.7)', // var(--background-color)
                 backdropFilter: 'blur(5px)',
                 zIndex: 1000,
                 position: 'fixed',
                 boxShadow: '1px 0px 9px black',
                 transition: '0.5s',
                 top: visible ? '0' : '-80px',
+                '@media (max-width: 1000px)': {
+                    visibility: 'hidden',
+                },
             }}
         >
             <Container

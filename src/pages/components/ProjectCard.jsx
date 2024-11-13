@@ -80,9 +80,6 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                     right: 0,
                     width: '16vw',
                     borderRadius: '8px',
-                    // [theme.breakpoints.down('sm')]: { // temp
-                    //     display: 'none',
-                    // },
                     '@media (max-width: 1200px)': {
                         display: 'none',
                     },
@@ -131,14 +128,6 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                                 backgroundBlendMode: 'soft-light',
                                 backgroundColor: 'rgba(26, 24, 36, 1.0)',
                             },
-                            // [theme.breakpoints.down('sm')]: { // temp
-                            //     backgroundImage: `url(${img})`,
-                            //     backgroundSize: 'cover',
-                            //     backgroundPosition: 'center',
-                            //     backgroundRepeat: 'no-repeat',
-                            //     backgroundBlendMode: 'soft-light',
-                            //     backgroundColor: 'rgba(26, 24, 36, 1.0)'
-                            // },
                             border: '1px solid var(--highlight-color)', 
                             transition: '0.5s',
                             ":hover": {
