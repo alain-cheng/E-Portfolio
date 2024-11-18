@@ -8,11 +8,11 @@ const Header = ({ headerImg }) => {
               Hello Im <b className="highlight1">Alain</b>!
             </div>
             <div className="Header-text__sub">
-              an <b className="highlight2">Undergraduate Student</b>
+              an <b className="highlight1">Undergraduate Student</b>
             </div>
             <div className="Header-text__desc">
-              I major in <b className="highlight2">Computer Science</b>, specializing in <br/>
-              <b className="highlight2">Software Technology</b>. I currently study at <br/>
+              I major in <b className="highlight1">Computer Science</b>, specializing in <br/>
+              <b className="highlight1">Software Technology</b>. I currently study at <br/>
               De La Salle University, Manila.
             </div>
           </div>

@@ -1,5 +1,8 @@
 import { Box } from "@mui/material";
 import React from "react";
+import ExtraHeading from "./components/ExtraHeading";
+import ExtraPhotography from "./components/ExtraPhotography";
+import ExtraIllustration from "./components/ExtraIllustration";
 
 function Extra() {
     return(
@@ -9,8 +12,11 @@ function Extra() {
                 margin: '25vh 0',
             }}
         >
-            <h1>Extra</h1>
-            <p>stuff about me</p>
+            <ExtraHeading/>
+
+            <ExtraPhotography/>
+
+            <ExtraIllustration/>
         </Box>
     )
 }

@@ -4,7 +4,7 @@ import Pdf from '../assets/Resume.pdf';
 import MenuIcon from '@mui/icons-material/Menu';
 
 export default function SideBar() {
-    const [open, setOpen] = React.useState(true)
+    const [open, setOpen] = React.useState(false)
     
     const scrollToSection = (id) => {
         const section = document.getElementById(id);

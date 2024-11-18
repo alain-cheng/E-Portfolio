@@ -38,7 +38,6 @@ body {
   min-width: 30vw; /*473px */
   margin: 0 38px 0 0;
   text-align: right;
-
 }
 
 .Header-text__main {
@@ -52,6 +51,11 @@ body {
   color: var(--highlight-color);
 }
 
+.highlight2 {
+  font-weight: 400;
+  color: var(--highlight-color-2);
+}
+
 .Header-text__sub {
   font-size: 30px; /*30px*/
   margin-top: -20px;
@@ -60,11 +64,6 @@ body {
 .Header-text__desc {
   font-size: 20px;
   margin: 20px 0 0 0;
-}
-
-.highlight2 {
-  font-weight: 700;
-  color: var(--highlight-color);
 }
 
 .Header-text__sub, .Header-text__desc {

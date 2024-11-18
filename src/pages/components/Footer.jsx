@@ -13,8 +13,14 @@ function Footer() {
         >
             <Container>
                 <Typography>
-                    Thank you for checking my Portfolio! I built this site using <b>ReactJS</b> and <b>Framer Motion</b> with <b>Material UI</b> components.
-                    Designed using <b>Figma</b>. Deployed to <b>Github Pages</b>.
+                    Thank you for checking my Portfolio! 
+                    
+                    I built this site using <b>ReactJS</b>.
+                    
+                    The animations are done by <b>Framer Motion</b> with components
+                    from the <b>Material UI</b> library.
+
+                    This site is partially designed by yours truly via <b>Figma</b>.
                 </Typography>
             </Container>
         </Box>

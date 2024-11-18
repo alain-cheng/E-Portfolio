@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as motion from "framer-motion/client";
 import ProjectCard from "./components/ProjectCard";
+import ProjectHeading from './components/ProjectHeading';
 import { Box } from "@mui/material";
 import { projectList } from "../projectList";
 
@@ -30,6 +31,8 @@ function Projects() {
                 flexDirection: 'column'
             }}
         >
+            <ProjectHeading/>
+            
             {projectList.map((project, index) => (
                 <motion.div
                     initial="offscreen"
