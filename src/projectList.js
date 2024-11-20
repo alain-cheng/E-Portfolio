@@ -7,7 +7,7 @@ export const projectList = [
     {   
         title: "Thesis: Improving Stegastamp's Detection of Hidden Messages in Images",
         img: placeholder,
-        body: "Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. ",
+        body: "",
         tags: ["Python", "Tensorflow 1.13"],
         url: "https://github.com/alain-cheng/THESIS",
     },
