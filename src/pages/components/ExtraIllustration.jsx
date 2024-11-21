@@ -28,23 +28,25 @@ const ExtraIllustration = ({ }) => {
             <Typography 
                 variant="h2" 
                 sx={{
-                    margin: '50vh 0 25vh 0',
+                    margin: '50vh 0 0 0',
                     fontFamily: 'Roboto, sans-serif',
                     textAlign: 'right',
                 }}
             >
                 <b className="highlight1">Illustration.</b>
             </Typography>
-            {/* <Typography 
+            <Typography 
                 variant="subtitle1" 
                 sx={{
-                    margin: '0 0 25vh 0',
+                    maxWidth: '40vw',
+                    margin: '0 0 25vh 30vw',
                     fontFamily: 'Merriweather, serif',
                     textAlign: 'right',
                 }}
             >
-                When...
-            </Typography> */}
+                I began interested in illustration just before exiting highschool. I found it to be incredibly
+                relaxing where I could enjoy the peaceful solitude and focus on my craft.  
+            </Typography>
 
             <Masonry columns={{ sm: 1, md: 2}} spacing={5}>
                 {artList.map((art, index) => (
@@ -53,7 +55,7 @@ const ExtraIllustration = ({ }) => {
                         src={art.img}
                         initial="offscreen"
                         whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.3 }}
+                        // viewport={{ once: true, amount: 0.3 }}
                         variants={variants}
                     />
                 ))}
