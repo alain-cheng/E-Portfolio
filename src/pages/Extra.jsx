@@ -10,6 +10,7 @@ function Extra() {
             id='Extra'
             sx={{
                 margin: '25vh 0',
+                border: 1,
             }}
         >
             <ExtraHeading/>

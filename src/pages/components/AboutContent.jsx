@@ -14,22 +14,22 @@ function AboutContent() {
         >
             <Container>
                 <Typography>
-                    Ever since I was little I would always be surrounded by technology, 
-                    from old desktop computers to portable game consoles like the Game Boy. 
-                    I also really got into the habit of sketching or doodling here and there 
-                    from a really young age. 
-                    Those childhood interests would not be realized until later on into my life 
-                    of highschool before transitioning to college when I begin thinking about 
-                    what I want to do as my career. 
-                    I would have begun exploring deeper into my interests such as trying my hands
-                    at scripting on a game engine and taking art a bit more 
-                    seriously than I did before. <br/><br/>
-                    Those two major interests I had would require different values and skill sets, 
-                    for example, technology requires logic and reason while art pours importance 
-                    to creative expression. However, both do align in the aspects of achievement 
-                    and creation — I began to realize that I have a passion for creating. 
-                    As such I believe my results from the APQ and PCK tests do somewhat encapsulate 
-                    my relevant interests and potential skills.
+                    Hello I am Alain, I enjoy exploring new concepts unfamiliar to me and giving my all to understand them. 
+                    I am a highly curious person, passionate with learning concepts I find fascinating, and take pride in what I make.
+                    Through creating, my main goal is to improve and continuously develop me and my skills.
+                    <br></br><br></br>
+                    Currently, I am working on a large personal project, taking on something I have never done before as a self-challenge.
+                    I modularized a business process by designing them into a modular workflow, carefully designing UI components, 
+                    and understanding how each data would flow to ensure its functions can properly meet user needs.
+                    <br></br><br></br>
+                    I see myself as an avid visual learner, I'd write and draw logic on a whiteboard as a way to better understand how things flow. I would iterate a bunch of times
+                    to make sure I fully understand. I simply cannot stop myself to figure out the why's and how's of how things work.
+                    <br></br><br></br>
+                    At the moment, I am interested on improving my design decisions towards user interfaces and their aesthetics, developing scalable and maintainable software, 
+                    optimizing performance, and ensuring satisfactory user experience.
+                    <br></br><br></br>
+                    Besides working, during my free time, I often enjoy the creative and calming process of illustrating,
+                    or in the kitchen trying out a new recipe, or even taking in the breathtaking scenery at Khaer Morhen before setting off on another quest.
                 </Typography>
             </Container>
         </Box>

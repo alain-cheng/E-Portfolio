@@ -2,7 +2,7 @@ import * as React from "react";
 import * as motion from "framer-motion/client";
 
 const iconVariants = {
-    hover: {scale: 1.05, y: -5},
+    hover: {scale: 1.05, y: -3},
     tap: {scale: 1},
 }
 
@@ -18,11 +18,11 @@ const SocialIcon = ({ IconComponent, url }) => {
         >
             <IconComponent 
                 sx={{
-                    minHeight: "45px", 
-                    minWidth: "45px", 
+                    minHeight: "30px", 
+                    minWidth: "30px", 
                     margin: "0 5px", 
                     color: "var(--text-color)",
-                    transition: "0.5s",
+                    transition: "0.1s",
                     ":hover": {
                         color: "var(--highlight-color)",
                     },

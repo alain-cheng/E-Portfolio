@@ -43,7 +43,7 @@ body {
 .Header-text__main {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  font-size: 75px; /*75px*/
+  font-size: 60px; /*75px*/
 }
 
 .highlight1 {
@@ -67,7 +67,6 @@ body {
 }
 
 .Header-text__sub, .Header-text__desc {
-  font-family: 'Merriweather', serif;
   font-weight: 300;
 }
 

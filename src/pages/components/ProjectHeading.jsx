@@ -1,19 +1,22 @@
-import { Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import * as React from "react";
 
 const ProjectHeading = ({ }) => {
     return(
-        <Container
+        <Box
             sx={{
-                minHeight: '30vh',
-                minWidth: '50vw',
+                height: '20vh',
+                width: '50vw',
                 textAlign: 'left',
             }}
         >
-            <Typography variant="h2">
-                <b className="highlight1">My Projects.</b>
+            <Typography variant="h3">
+                <b className="highlight1">My Projects</b>
             </Typography>
-        </Container>
+            <Typography variant="subtitle1">
+                A sneakpeak on what I am currently doing and stuff I did previously.
+            </Typography>
+        </Box>
     )
 }
 

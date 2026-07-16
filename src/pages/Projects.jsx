@@ -24,11 +24,13 @@ function Projects() {
         // Page Container
         <Box 
             id='Projects' 
-            sx={{ 
-                margin: '0vh 0', 
-                width: '50%', 
+            sx={{
+                width: '100%', 
                 display: 'flex', 
-                flexDirection: 'column'
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+                border: 1,
             }}
         >
             <ProjectHeading/>

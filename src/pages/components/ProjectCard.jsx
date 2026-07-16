@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { Fragment, useState } from "react";
 import * as motion from "framer-motion/client";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Box, Chip, Card, CardContent, Typography } from '@mui/material';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 const ProjectCard = ({ title, img, body, tags, url }) => {
-    const [isHovered, setIsHovered] = React.useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     const theme = createTheme({
         palette: {
@@ -23,15 +23,23 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
 
     const card = (
         <ThemeProvider theme={theme}>
-            <CardContent>
+            <CardContent
+                sx={{
+                    opacity: isHovered ? 1: 0,
+                    transition: "opacity 0.5s ease",
+                }}
+            >
                 <Typography 
                     variant="h6" 
                     sx={{ 
                         color: 'var(--text-color)', 
-                        transition: '0.5s',
+                        transition: '1s',
+                        opacity: isHovered ? 1: 0,
                         ".MuiCard-root:hover &": {
                             color: 'var(--highlight-color-2)',
+                            transitionDelay: '150ms'
                         },
+                        
                     }}
                 >
                     {title} 
@@ -39,6 +47,9 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                         animate={{
                             x: isHovered ? 5 : 0,
                             y: isHovered ? -5 : 0,
+                        }}
+                        transition={{
+                            delay: isHovered ? 0.5: 0,
                         }}
                         style={{
                             display: "inline-block",
@@ -48,17 +59,29 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                         <ArrowOutwardIcon sx={{ scale: 0.7 }}/>
                     </motion.div>
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'var(--text-color)', marginTop: '8px' }}>
+                <Typography 
+                    variant="body2" 
+                    sx={{ 
+                        color: 'var(--text-color)', 
+                        marginTop: '8px', 
+                        opacity: isHovered ? 1: 0,
+                        transition: '1s',
+                        transitionDelay: '400ms'
+                    }}
+                >
                     {body}
                 </Typography>
                 <Box
                     sx={{
                         margin: '1em 0 0 0',
+                        opacity: isHovered ? 1: 0,
+                        transition: '400ms',
+                        transitionDelay: '900ms',
                     }}
                 >
                     {tags.map((tag, index) => 
                         <Chip 
-                            sx={{ margin: '0.3em 0.3em' }}
+                            sx={{ margin: '0.3em 0.3em', }}
                             label={tag} 
                             key={index} 
                             color='primary'
@@ -71,14 +94,13 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
     )
     
     const thumbnail = (
-        <React.Fragment>
+        <Fragment>
             <Box
                 component="img"
                 sx={{
-                    position: 'absolute',
-                    top: 0,
-                    right: 0,
-                    width: '16vw',
+                    width: '190px',
+                    height: '100px',
+                    objectFit: 'cover',
                     borderRadius: '8px',
                     '@media (max-width: 1200px)': {
                         display: 'none',
@@ -88,7 +110,7 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                 alt="thumbnail"
                 src={img}
             />
-        </React.Fragment>
+        </Fragment>
     )
 
     return(
@@ -102,15 +124,14 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                 sx={{ 
                     position: 'relative',
                     display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    margin: '30px 0',
-                    width: '50vw',
+                    width: 'auto',
+                    marginY: '10px',
+                    paddingX: '1px',
                 }}
             >
                 <Box 
                     sx={{ 
-                        width: '494px',
+                        width: '600px',
                     }} 
                 >
                     <Card 
@@ -118,30 +139,36 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                         onMouseLeave={() => setIsHovered(false)}
                         onClick={handleClick}
                         sx={{
-                            position: 'relative',
-                            backgroundColor: 'var(--background-secondary-color)',
-                            '@media (max-width: 1200px)': {
-                                backgroundImage: `url(${img})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                                backgroundRepeat: 'no-repeat',
-                                backgroundBlendMode: 'soft-light',
-                                backgroundColor: 'rgba(26, 24, 36, 1.0)',
+                            height: '300px',
+                            backgroundImage: `url(${img})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat',
+
+                            "&::before": {
+                                content: '""',
+                                position: 'absolute',
+                                inset: 0,
+                                backgroundColor: 'rgba(26, 24, 36, 0)',
+                                transition: 'background-color 0.5s ease',
+                                zIndex: 1,
                             },
-                            border: '1px solid var(--highlight-color)', 
-                            transition: '0.5s',
-                            ":hover": {
-                                border: '1px solid var(--highlight-color-2)',
+                            
+                            "&:hover::before": {
+                                backgroundColor: 'rgba(26, 24, 36, 0.7)',
                             },
+
+                            "& > *": {
+                                position: 'relative',
+                                zIndex: 2,
+                            },
+
                             cursor: 'pointer',
-                            zIndex: 500,
                         }}
                     >
                         {card}
                     </Card>
                 </Box>
-
-                {thumbnail}
             </Box>
         </motion.div>
     );

@@ -43,9 +43,8 @@ const ExtraPhotography = ({ }) => {
                     textAlign: 'left',
                 }}
             >
-                Every time I get the opportunity to travel to new places, I'd sometimes bring my DSLR along my trips. 
-                Photography is my way to preserve this moment in time, looking back to reminisce the fun and
-                unforgetful memories I made, and appreciate the granduer of the world.
+                Every time I travel to new places, I like snapping photographs of memorable and interesting scenery and objects I've seen to preserve this moment in time. 
+                It is one of my ways of self-expression to convey different emotions and feeling that emanate through these pictures I share with others.
             </Typography>
 
             <Masonry columns={{ sm: 1, md: 2}} spacing={5}>

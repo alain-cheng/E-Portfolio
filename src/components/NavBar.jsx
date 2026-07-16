@@ -27,12 +27,12 @@ export default function NavBar() {
         window.open(Pdf, "_blank")
     }
 
-    React.useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [lastScrollY]);
+    // React.useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, [lastScrollY]);
 
     return(
         <Box
