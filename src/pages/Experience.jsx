@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 function Experience() {
     return(
@@ -9,7 +9,9 @@ function Experience() {
                 border: 1,
             }}
         >
-
+            <Typography variant="h3">
+                <b className="highlight1">Experience</b>
+            </Typography>
         </Box>
     )
 }
