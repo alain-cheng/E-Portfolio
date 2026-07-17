@@ -2,6 +2,8 @@ import { useState } from "react";
 import * as motion from "framer-motion/client";
 import { ThemeProvider } from "@emotion/react";
 import { Box, CardContent, Chip, Container, createTheme, Typography } from "@mui/material"
+import CircleIcon from '@mui/icons-material/Circle';
+import { TAG_TYPES } from "../../constants/TAG_TYPES";
 
 
 const ExperienceCard = ({title, company, description, timeFrame, tags, url}) => {
@@ -14,6 +16,11 @@ const ExperienceCard = ({title, company, description, timeFrame, tags, url}) => 
                 light: '#543895',
                 contrastText: '#FB89FF',
             },
+            secondary: {
+                main: '#24446B',
+                light: '#34649B',
+                contrastText: '#7FFBFF',
+            }
         },
     });
 
@@ -86,10 +93,15 @@ const ExperienceCard = ({title, company, description, timeFrame, tags, url}) => 
                         >   
                             {tags.map((tag, index) => 
                                 <Chip
-                                    sx={{ margin: '0.3em 0.3em', }}
-                                    label={tag} 
+                                    sx={{ margin: '0.3em 0.3em', paddingX: '5px' }}
+                                    label={tag.text} 
                                     key={index} 
-                                    color='primary'
+                                    color={ tag.type === TAG_TYPES.STATUS ? 'secondary' : 'primary'}
+                                    icon={
+                                        tag.type === TAG_TYPES.STATUS 
+                                            ? <CircleIcon sx={{ fontSize: '10px' }} />
+                                            : undefined
+                                    }
                                 />
                             )}
                         </Box>

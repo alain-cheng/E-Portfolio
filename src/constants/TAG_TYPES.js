@@ -1,0 +1,7 @@
+export const TAG_TYPES = {
+    STATUS: "STATUS",
+    LANGUAGE: "LANGUAGE",
+    FRAMEWORK: "FRAMEWORK",
+    TOOL: "TOOL",
+    LIBRARY: "LIBRARY",
+}

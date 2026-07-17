@@ -2,7 +2,11 @@ import { Fragment, useState } from "react";
 import * as motion from "framer-motion/client";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Box, Chip, Card, CardContent, Typography } from '@mui/material';
+
+import CircleIcon from '@mui/icons-material/Circle';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+
+import { TAG_TYPES } from "../../constants/TAG_TYPES";
 
 const ProjectCard = ({ title, img, body, tags, url }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -14,6 +18,11 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                 light: '#543895',
                 contrastText: '#FB89FF',
             },
+            secondary: {
+                main: '#24446B',
+                light: '#34649B',
+                contrastText: '#7FFBFF',
+            }
         },
     });
 
@@ -81,10 +90,15 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                 >
                     {tags.map((tag, index) => 
                         <Chip 
-                            sx={{ margin: '0.3em 0.3em', }}
-                            label={tag} 
+                            sx={{ margin: '0.3em 0.3em', paddingX: '5px' }}
+                            label={tag.text} 
                             key={index} 
-                            color='primary'
+                            color={tag.type === TAG_TYPES.STATUS ? 'secondary' : 'primary'}
+                            icon={
+                                tag.type === TAG_TYPES.STATUS 
+                                    ? <CircleIcon sx={{ fontSize: '10px' }} />
+                                    : undefined
+                            }
                         />
                     )}
                 </Box>
