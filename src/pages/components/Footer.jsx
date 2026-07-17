@@ -12,7 +12,11 @@ function Footer() {
             }}
         >
             <Container>
-                <Typography>
+                <Typography
+                    sx={{
+                        opacity: 0.75,
+                    }}
+                >
                     Thank you for checking my Portfolio! 
                     
                     I built this site with <b>React</b>.

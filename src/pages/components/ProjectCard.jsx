@@ -21,7 +21,7 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
         if (url) window.open(url, '_blank');
     };
 
-    const card = (
+    const cardContent = (
         <ThemeProvider theme={theme}>
             <CardContent
                 sx={{
@@ -166,7 +166,7 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                             cursor: 'pointer',
                         }}
                     >
-                        {card}
+                        {cardContent}
                     </Card>
                 </Box>
             </Box>

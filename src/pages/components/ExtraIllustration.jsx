@@ -2,7 +2,7 @@ import * as React from "react";
 import * as motion from "framer-motion/client";
 import { Container, Typography } from "@mui/material";
 import Masonry from "@mui/lab/Masonry";
-import { artList } from "../../artList";
+import { artList } from "../../lists/artList";
 
 
 const ExtraIllustration = ({ }) => {

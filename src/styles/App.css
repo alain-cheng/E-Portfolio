@@ -1,5 +1,5 @@
 :root {
-  --background-color: #0E0C18;
+  --background-color: #241f38;
   --background-secondary-color: #1A1824;
   --text-color: #c2bae7;
   --highlight-color: #7E50FD;
@@ -11,12 +11,18 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: var(--text-color);
-  background-color: var(--background-color);
   overflow-x: hidden;
 }
 
 .App {
   background-color: var(--background-color);
+  background-image: url("/public/bg-texture.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+
   min-width: 100vw;
   min-height: 100vh;
   display: flex;

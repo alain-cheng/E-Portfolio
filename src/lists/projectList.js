@@ -1,13 +1,13 @@
-import placeholder from "./assets/Thumbnail.svg"
-import gcakes from "./assets/thumbnails/gcakes.png"
-import donut from "./assets/thumbnails/donuteating.gif"
-import taboo from "./assets/thumbnails/taboo.jpg"
+import placeholder from "../assets/Thumbnail.svg"
+import gcakes from "../assets/thumbnails/gcakes.png"
+import donut from "../assets/thumbnails/donuteating.gif"
+import taboo from "../assets/thumbnails/taboo.jpg"
 
 export const projectList = [
     {   
         title: "Project IRYS",
         img: placeholder,
-        body: "A local hardware inventory management system that I have been developing during my free time. I mainly started this project thanks to family connections when I was made aware of a small hardware supply business' operational challenges. After making a brief visit with their office, I began understanding their workflow and requirements so I used this opportunity to build a system in mind with the possibility for them to adopt it that would solve challenges the business is currently facing.",
+        body: "A local hardware inventory management system that I have been developing during my free time. I mainly started this project when I was made aware of a small hardware supply business' operational challenges. I began understanding their workflow and requirements so I used this opportunity to build a system in mind with the possibility for them to adopt it.",
         tags: ["Ongoing", "React", "Tailwind", "Tauri"],
         url: "https://github.com/alain-cheng/Project-Irys",
     },
@@ -15,7 +15,7 @@ export const projectList = [
         title: "GCakes",
         img: gcakes,
         body: "A treat-themed web store for a local cake business developed as part of a software engineering course. I primarily focused on the development of UI components and pages, and the integration with our API endpoints",
-        tags: ["Typescript", "Next.js", "Material UI", "Contentful"],
+        tags: ["TypeScript", "Next.js", "Material UI", "Contentful"],
         url: "https://github.com/alain-cheng/gcakes-fe",
     },
     {   

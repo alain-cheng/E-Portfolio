@@ -24,7 +24,6 @@ const ScrollPopup = ({ show }) => {
                     flexDirection: 'column',
                     bottom: '5%',
                     left: '5%',
-                    border: 1,
                 }}
             >
                 {socials.map((social, index) => (

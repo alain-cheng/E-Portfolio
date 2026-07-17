@@ -1,8 +1,7 @@
-import * as React from 'react';
 import * as motion from "framer-motion/client";
 import ProjectCard from "./components/ProjectCard";
 import { Box, Typography } from "@mui/material";
-import { projectList } from "../projectList";
+import { projectList } from "../lists/projectList";
 
 function Projects() {
     const cardVariants = {
@@ -23,11 +22,11 @@ function Projects() {
         <Box 
             id='Projects' 
             sx={{
-                width: '100%', 
                 display: 'flex', 
+                flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                flexDirection: 'column',
+                width: '100%', 
             }}
         >
             {/* Heading */}
@@ -38,10 +37,10 @@ function Projects() {
                     textAlign: 'left',
                 }}
             >
-                <Typography variant="h3">
+                <Typography variant="h4">
                     <b className="highlight1">My Projects</b>
                 </Typography>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" sx={{ opacity: 0.75 }}>
                     A sneakpeak on what I am currently doing and stuff I did previously.
                 </Typography>
             </Box>

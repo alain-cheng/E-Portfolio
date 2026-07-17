@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useRef, useState } from "react";
 import * as motion from "framer-motion/client";
 import { Box } from '@mui/material';
 // assets
@@ -13,11 +13,11 @@ import { socials } from "../socials";
 
 
 function About() {
-  const [showPopup, setShowPopup] = React.useState(false);
-  const ref = React.useRef(null)
+  const [showPopup, setShowPopup] = useState(false);
+  const ref = useRef(null)
 
-  // Handle the popup
-  React.useEffect(() => {
+  // Handle pop up of secondary icon bar
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
@@ -27,7 +27,7 @@ function About() {
           setShowPopup(false);
         }
       }, 
-      { threshold: 0.1 }
+      { threshold: 0.4 }
     );
 
     if (ref.current) {
@@ -54,7 +54,8 @@ function About() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: '25vh 0',
+        margin: '5vh 0',
+        paddingTop: '10vh',
       }}
     >
       <motion.div
@@ -70,8 +71,8 @@ function About() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            marginTop: '41px',
-            minHeight: '45px',
+            marginTop: '40px',
+            minHeight: '40px',
             minWidth: '200px',
           }}
         >

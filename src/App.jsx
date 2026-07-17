@@ -7,6 +7,7 @@ import Footer from "./pages/components/Footer";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Extra from "./pages/Extra";
+import Experience from "./pages/Experience";
 
 
 // styling
@@ -18,10 +19,15 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
+
       <SideBar/>
+
       <About/>
+
+      <Experience/>
+
       <Projects/>
-      <Extra/>
+      
       <Footer/>
     </div>
     

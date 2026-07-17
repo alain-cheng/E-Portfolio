@@ -2,7 +2,7 @@ import * as React from "react";
 import * as motion from "framer-motion/client";
 import { Button, Container, Typography } from "@mui/material";
 import Masonry from "@mui/lab/Masonry";
-import { photosList } from "../../photosList";
+import { photosList } from "../../lists/photosList";
 
 
 const ExtraPhotography = ({ }) => {
