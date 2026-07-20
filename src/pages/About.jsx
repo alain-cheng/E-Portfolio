@@ -27,7 +27,7 @@ function About() {
           setShowPopup(false);
         }
       }, 
-      { threshold: 0.4 }
+      { threshold: 0.2 }
     );
 
     if (ref.current) {

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { Box, Button, Container } from '@mui/material';
 import Pdf from '../assets/Resume.pdf';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -76,8 +77,8 @@ export default function SideBar() {
                     }}
                 >
                     <Button variant='text' onClick={() => handleOpen()}><MenuIcon sx={{scale: 1.5}}/></Button>
-                    <Button variant='text' onClick={() => scrollToSection('About')}>Profile</Button>
-                    <Button variant='text' onClick={() => scrollToSection('Extra')}>Extra</Button>
+                    <Button component={Link} to='/' variant='text'>Profile</Button>
+                    <Button component={Link} to='/extra' variant='text'>Extra</Button>
                     <Button variant='outlined' onClick={() => showPDF()}>Resume</Button>
                 </Container>
             </Box>
