@@ -1,42 +1,22 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { Box, Button, Container } from '@mui/material';
+
 import Pdf from '../assets/Resume.pdf';
 
 export default function NavBar() {
-    const [visible, setVisible] = React.useState(true);
-    const [lastScrollY, setLastScrollY] = React.useState(0); // navbar hide when scroll down
 
-    const scrollToSection = (id) => {
-        const section = document.getElementById(id);
-        section?.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start',
-        });
-    }
+    const [visible, setVisible] = React.useState(true);
 
     const showPDF = () => {
         window.open(Pdf, "_blank")
     }
 
-    // const handleScroll = () => {
-    //     if (typeof window !== "undefined") {
-    //         const scrollY = window.scrollY;
-    //         if (scrollY > lastScrollY) setVisible(false);
-    //         else setVisible(true);
-    //         setLastScrollY(scrollY);
-    //     }
-    // };
-
-    // React.useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, [lastScrollY]);
-
     return(
         <Box
             sx={{
+                display: 'flex',
+                alignItems: 'center',
                 minWidth: '100vw',
                 minHeight: '7vh',
                 backgroundColor: 'rgba(14, 12, 24, 0.7)', // var(--background-color)
@@ -54,16 +34,13 @@ export default function NavBar() {
             <Container
                 sx={{
                     display: 'flex',
-                    justifyContent: 'space-between',
                     alignItems: 'center',
-                    width: '50vw',
-                    height: '7vh',
+                    justifyContent: 'space-evenly',
+                    width: '35vw',
                 }}
             >
-                <Button variant='text' onClick={() => scrollToSection('About')}>About Me</Button>
-                <Button variant='text' onClick={() => scrollToSection('Experience')}>Experience</Button>
-                <Button variant='text' onClick={() => scrollToSection('Projects')}>Projects</Button>
-                <Button variant='text' onClick={() => scrollToSection('Extra')}>Extra</Button>
+                <Button component={Link} to='/' variant='text'>Profile</Button>
+                <Button component={Link} to='/extra' variant='text'>Extra</Button>
                 <Button variant='outlined' onClick={() => showPDF()}>Resume</Button>
             </Container>
         </Box>

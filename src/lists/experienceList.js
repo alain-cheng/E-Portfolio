@@ -10,7 +10,8 @@ export const experienceList = [
             {text: ".NET Core", type: TAG_TYPES.FRAMEWORK}, 
             {text: "C#", type: TAG_TYPES.LANGUAGE}, 
             {text: "JavaScript", type: TAG_TYPES.LANGUAGE}, 
-            {text: "React", type: TAG_TYPES.FRAMEWORK}, {text: "Tailwind", type: TAG_TYPES.FRAMEWORK}
+            {text: "React", type: TAG_TYPES.FRAMEWORK}, 
+            {text: "Tailwind", type: TAG_TYPES.FRAMEWORK},
         ],
         url: "https://elinnovtech.com",
     },

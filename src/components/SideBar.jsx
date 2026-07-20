@@ -76,8 +76,7 @@ export default function SideBar() {
                     }}
                 >
                     <Button variant='text' onClick={() => handleOpen()}><MenuIcon sx={{scale: 1.5}}/></Button>
-                    <Button variant='text' onClick={() => scrollToSection('About')}>About Me</Button>
-                    <Button variant='text' onClick={() => scrollToSection('Projects')}>My Projects</Button>
+                    <Button variant='text' onClick={() => scrollToSection('About')}>Profile</Button>
                     <Button variant='text' onClick={() => scrollToSection('Extra')}>Extra</Button>
                     <Button variant='outlined' onClick={() => showPDF()}>Resume</Button>
                 </Container>

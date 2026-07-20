@@ -26,7 +26,7 @@ const ExtraPhotography = ({ }) => {
             }}
         >
             <Typography 
-                variant="h2" 
+                variant="h4" 
                 sx={{
                     margin: '0 0 0 0',
                     fontFamily: 'Roboto, sans-serif',
@@ -54,7 +54,7 @@ const ExtraPhotography = ({ }) => {
                         src={photo.img}
                         initial="offscreen"
                         whileInView="onscreen"
-                        // viewport={{ once: false, amount: 0.3 }}
+                        viewport={{ once: true, }}
                         variants={variants}
                     />
                 ))}
