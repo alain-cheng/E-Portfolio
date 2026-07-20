@@ -43,8 +43,8 @@ const ExtraPhotography = ({ }) => {
                     textAlign: 'left',
                 }}
             >
-                Every time I travel to new places, I like snapping photographs of memorable and interesting scenery and objects I've seen to preserve this moment in time. 
-                It is one of my ways of self-expression to convey different emotions and feeling that emanate through these pictures I share with others.
+                Every time I travel to new places, I like snapping photographs of memorable and interesting scenery and objects. 
+                It is one of my ways of self-expression to convey different emotions and feeling that may come through these pictures.
             </Typography>
 
             <Masonry columns={{ sm: 1, md: 2}} spacing={5}>

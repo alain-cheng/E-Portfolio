@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Box, Button, Container } from '@mui/material';
+import DownloadIcon from '@mui/icons-material/Download';
 
 import Pdf from '../assets/Resume.pdf';
 
 export default function NavBar() {
+    const location = useLocation();
 
     const [visible, setVisible] = React.useState(true);
 
@@ -39,9 +41,49 @@ export default function NavBar() {
                     width: '35vw',
                 }}
             >
-                <Button component={Link} to='/' variant='text'>Profile</Button>
-                <Button component={Link} to='/extra' variant='text'>Extra</Button>
-                <Button variant='outlined' onClick={() => showPDF()}>Resume</Button>
+                <Button 
+                    component={Link} to='/' 
+                    variant='text' 
+                    sx={{
+                        color: location.pathname === "/"
+                            ? "var(--highlight-color-2)"
+                            : "var(--text-color)",
+
+                        transition: "0.3s",
+
+                        "&:hover" : {
+                            color: "var(--highlight-color-2)",
+                        }
+                    }}
+                >
+                    Profile
+                </Button>
+                <Button 
+                    component={Link} to='/extra' variant='text'
+                    sx={{
+                        color: location.pathname === "/extra"
+                            ? "var(--highlight-color-2)"
+                            : "var(--text-color)",
+
+                        transition: "0.3s",
+
+                        "&:hover" : {
+                            color: "var(--highlight-color-2)",
+                        }
+                    }}
+                >
+                    Extra
+                </Button>
+                <Button 
+                    variant='text' onClick={() => showPDF()}
+                    startIcon={<DownloadIcon/>}
+                    sx={{
+                        color: "var(--text-color)",
+                        border: 1,
+                    }}
+                >
+                    Resume
+                </Button>
             </Container>
         </Box>
     );

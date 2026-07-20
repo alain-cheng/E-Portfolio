@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Box, Container, Typography } from "@mui/material";
 
 function Footer() {
+    const LAST_UPDATED = "July 20, 2026"; //
+
     return(
         <Box
             sx={{
@@ -15,6 +17,7 @@ function Footer() {
                 <Typography
                     sx={{
                         opacity: 0.75,
+                        fontSize: '12px',
                     }}
                 >
                     Thank you for checking my Portfolio! 
@@ -23,6 +26,8 @@ function Footer() {
                     
                     The animations are done using <b>Framer Motion</b> with components
                     from the <b>Material UI</b> library.
+
+                    Last updated on <b>{LAST_UPDATED}</b>.
                 </Typography>
             </Container>
         </Box>

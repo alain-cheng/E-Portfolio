@@ -13,7 +13,11 @@ function AboutContent() {
             }}
         >
             <Container>
-                <Typography>
+                <Typography
+                    sx={{
+                        fontSize: '14px',
+                    }}
+                >
                     Hello I am Alain, I enjoy exploring new concepts unfamiliar to me and giving my all to understand them. 
                     I am a highly curious person, passionate with learning concepts I find fascinating, and take pride in what I make.
                     Through creating, my main goal is to improve and continuously develop me and my skills.

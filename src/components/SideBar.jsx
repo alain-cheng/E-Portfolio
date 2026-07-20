@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Box, Button, Container } from '@mui/material';
-import Pdf from '../assets/Resume.pdf';
+import DownloadIcon from '@mui/icons-material/Download';
 import MenuIcon from '@mui/icons-material/Menu';
+import Pdf from '../assets/Resume.pdf';
 
 export default function SideBar() {
     const [open, setOpen] = React.useState(false)
+    const location = useLocation();
     
     const scrollToSection = (id) => {
         const section = document.getElementById(id);
@@ -77,9 +79,37 @@ export default function SideBar() {
                     }}
                 >
                     <Button variant='text' onClick={() => handleOpen()}><MenuIcon sx={{scale: 1.5}}/></Button>
-                    <Button component={Link} to='/' variant='text'>Profile</Button>
-                    <Button component={Link} to='/extra' variant='text'>Extra</Button>
-                    <Button variant='outlined' onClick={() => showPDF()}>Resume</Button>
+                    <Button 
+                        component={Link} to='/' 
+                        variant='text' 
+                        sx={{
+                            color: location.pathname === '/'
+                                ? "var(--highlight-color-2)"
+                                : "var(--text-color)"
+                        }}
+                    >
+                        Profile
+                    </Button>
+                    <Button 
+                        component={Link} to='/extra' variant='text'
+                        sx={{
+                            color: location.pathname === '/extra'
+                                ? "var(--highlight-color-2)"
+                                : "var(--text-color)"
+                        }}
+                    >
+                        Extra
+                    </Button>
+                    <Button 
+                        variant='text' onClick={() => showPDF()}
+                        startIcon={<DownloadIcon/>}
+                        sx={{
+                            color: "var(--text-color)",
+                            border: 1,
+                        }}
+                    >
+                        Resume
+                    </Button>
                 </Container>
             </Box>
         </>
