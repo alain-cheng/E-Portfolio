@@ -1,4 +1,5 @@
 import placeholder from "../assets/Thumbnail.svg"
+import projectIrys from "../assets/thumbnails/project-irys.gif"
 import gcakes from "../assets/thumbnails/gcakes.png"
 import donut from "../assets/thumbnails/donuteating.gif"
 import taboo from "../assets/thumbnails/taboo.jpg"
@@ -7,7 +8,7 @@ import { TAG_TYPES } from "../constants/TAG_TYPES";
 export const projectList = [
     {   
         title: "Project IRYS",
-        img: placeholder,
+        img: projectIrys,
         body: "A local hardware inventory management system that I have been developing during my free time. I mainly started this project when I was made aware of a small hardware supply business' operational challenges. I began understanding their workflow and requirements so I used this opportunity to build a system in mind with the possibility for them to adopt it.",
         tags: [
             {text: "Ongoing", type: TAG_TYPES.STATUS}, 
