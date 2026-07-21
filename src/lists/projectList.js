@@ -18,6 +18,7 @@ export const projectList = [
             {text: "Tauri", type: TAG_TYPES.FRAMEWORK },
         ],
         url: "https://github.com/alain-cheng/Project-Irys",
+        timeFrame: "JAN 2026 — NOW",
     },
     {   
         title: "GCakes",
@@ -30,6 +31,7 @@ export const projectList = [
             {text: "Contentful", type: TAG_TYPES.TOOL },
         ],
         url: "https://github.com/alain-cheng/gcakes-fe",
+        timeFrame: "FEB 2023 — APR 2023",
     },
     {   
         title: "Taboo",
@@ -41,6 +43,7 @@ export const projectList = [
             {text: "Godot", type: TAG_TYPES.TOOL },
         ],
         url: "https://github.com/alain-cheng/MOBDEVE-MP",
+        timeFrame: "OCT 2023 — DEC 2023",
     },
     {   
         title: "Donut Eating Contest",
@@ -51,5 +54,6 @@ export const projectList = [
             {text: "Blender", type: TAG_TYPES.TOOL },
         ],
         url: "https://github.com/alain-cheng/Donut-Eating-Contest",
+        timeFrame: "OCT 2024",
     },
 ];

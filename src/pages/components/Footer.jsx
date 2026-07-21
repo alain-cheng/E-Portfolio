@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Container, Typography } from "@mui/material";
 
 function Footer() {
-    const LAST_UPDATED = "July 20, 2026"; //
+    const LAST_UPDATED = "July 21, 2026"; //
 
     return(
         <Box

@@ -59,6 +59,7 @@ function Projects() {
                         body={project.body}
                         tags={project.tags}
                         url={project.url}
+                        timeFrame={project.timeFrame}
                     />
                 </motion.div>
             ))}

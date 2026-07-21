@@ -8,7 +8,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 import { TAG_TYPES } from "../../constants/TAG_TYPES";
 
-const ProjectCard = ({ title, img, body, tags, url }) => {
+const ProjectCard = ({ title, img, body, tags, url, timeFrame }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const theme = createTheme({
@@ -67,6 +67,17 @@ const ProjectCard = ({ title, img, body, tags, url }) => {
                     >
                         <ArrowOutwardIcon sx={{ scale: 0.7 }}/>
                     </motion.div>
+                </Typography>
+                <Typography
+                    sx={{
+                        color: 'var(--text-color)',
+                        fontSize: '12px',
+                        opacity: isHovered ? 1: 0,
+                        transition: '1s',
+                        transitionDelay: '300ms'
+                    }}
+                >
+                    {timeFrame}
                 </Typography>
                 <Typography 
                     variant="body2" 
