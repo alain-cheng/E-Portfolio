@@ -11,6 +11,10 @@ function Footer() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 margin: '5vh 25vw',
+
+                '@media (max-width: 768px)': {
+                    mx: '5vw',
+                }
             }}
         >
             <Container>

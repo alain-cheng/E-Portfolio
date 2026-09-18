@@ -24,6 +24,10 @@ const ScrollPopup = ({ show }) => {
                     flexDirection: 'column',
                     bottom: '5%',
                     left: '5%',
+
+                    '@media (max-width: 768px)': {
+                        visibility: 'hidden',
+                    }
                 }}
             >
                 {socials.map((social, index) => (

@@ -8,8 +8,12 @@ function AboutContent() {
             sx={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
                 margin: '50vh 25vw 0 25vw',
+
+                '@media (max-width: 768px)': {
+                    mt: '15vh',
+                    mx: '5vw',
+                },
             }}
         >
             <Container>

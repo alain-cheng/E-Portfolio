@@ -1,5 +1,6 @@
 :root {
   --background-color: #241f38;
+  --background-color-mobile: #090618;
   --background-secondary-color: #1A1824;
   --text-color: #c2bae7;
   --highlight-color: #7E50FD;
@@ -22,34 +23,33 @@ body {
   background-repeat: no-repeat;
   background-blend-mode: overlay;
   background-attachment: fixed;
-
-  min-width: 100vw;
-  min-height: 100vh;
+  
+  min-height: 100vh; /*fallback*/
+  min-height: 100dvh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .App-header {
   min-height: 250px;
-  min-width: 50vw; /*761px*/
+  width: 50vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 30px;
 }
 
 .Header-text {
   min-height: 206px;
-  min-width: 30vw; /*473px */
-  margin: 0 38px 0 0;
   text-align: right;
 }
 
 .Header-text__main {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  font-size: 60px; /*75px*/
+  font-size: 60px;
 }
 
 .highlight1 {
@@ -63,7 +63,7 @@ body {
 }
 
 .Header-text__sub {
-  font-size: 30px; /*30px*/
+  font-size: 30px;
   margin-top: -20px;
 }
 
@@ -78,4 +78,34 @@ body {
 
 .Header-image img {
   width: 16.276vw;
+}
+
+@media (max-width: 768px) {
+  .App {
+    background-color: var(--background-color-mobile);
+    background-image: none;
+  }
+
+  .App-header {
+    flex-direction: column-reverse;
+    min-height: unset;
+    gap: 20px;
+  }
+
+  .Header-text {
+    min-height: unset;
+    text-align: center;
+  }
+
+  .Header-text__main {
+    font-size: 45px;
+  }
+
+  .Header-text__desc {
+    font-size: 18px;
+  }
+
+  .Header-image img {
+    width: 45vw;
+  }
 }
