@@ -1,6 +1,6 @@
 :root {
   --background-color: #241f38;
-  --background-color-mobile: #090618;
+  --background-color-mobile: #070411;
   --background-secondary-color: #1A1824;
   --text-color: #c2bae7;
   --highlight-color: #7E50FD;
@@ -89,7 +89,9 @@ body {
   .App-header {
     flex-direction: column-reverse;
     min-height: unset;
+    width: unset;
     gap: 20px;
+    margin: 0 5vw;
   }
 
   .Header-text {

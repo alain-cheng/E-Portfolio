@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Container, Typography } from "@mui/material";
 
 function Footer() {
-    const LAST_UPDATED = "September 17, 2026"; //
+    const LAST_UPDATED = "October 5, 2026"; //
 
     return(
         <Box
@@ -13,7 +13,7 @@ function Footer() {
                 margin: '5vh 25vw',
 
                 '@media (max-width: 768px)': {
-                    mx: '5vw',
+                    mx: 0,
                 }
             }}
         >

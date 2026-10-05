@@ -1,9 +1,18 @@
+import { useEffect, useState } from "react";
 import * as motion from "framer-motion/client";
 import ProjectCard from "./components/ProjectCard";
 import { Box, Typography } from "@mui/material";
 import { projectList } from "../lists/projectList";
 
+
 function Projects() {
+    const [isMobile, setIsMobile] = useState(false);
+    
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        setIsMobile(mediaQuery.matches);
+    }, [])
+
     const cardVariants = {
         offscreen: {
             scale: 0,
@@ -33,8 +42,15 @@ function Projects() {
             <Box
                 sx={{
                     height: '20vh',
-                    width: '50vw',
+                    width: '100%',
+                    maxWidth: '600px',
+                    boxSizing: 'border-box',
                     textAlign: 'left',
+                    '@media (max-width: 768px)': {
+                        height: 'auto',
+                        marginBottom: '2rem',
+                        paddingX: '1rem',
+                    },
                 }}
             >
                 <Typography variant="h4">
@@ -47,7 +63,7 @@ function Projects() {
             
             {projectList.map((project, index) => (
                 <motion.div
-                    initial="offscreen"
+                    initial={isMobile? false : "offscreen"}
                     whileInView="onscreen"
                     viewport={{ once: false, amount: 0.3 }}
                     variants={cardVariants}
@@ -60,6 +76,7 @@ function Projects() {
                         tags={project.tags}
                         url={project.url}
                         timeFrame={project.timeFrame}
+                        isMobile={isMobile}
                     />
                 </motion.div>
             ))}

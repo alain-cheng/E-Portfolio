@@ -13,9 +13,11 @@ export const projectList = [
         tags: [
             {text: "Ongoing", type: TAG_TYPES.STATUS}, 
             {text: "JavaScript", type: TAG_TYPES.LANGUAGE },
+            {text: "Rust", type: TAG_TYPES.LANGUAGE },
             {text: "React", type: TAG_TYPES.FRAMEWORK }, 
             {text: "Tailwind", type: TAG_TYPES.FRAMEWORK }, 
             {text: "Tauri", type: TAG_TYPES.FRAMEWORK },
+            {text: "MS SQL", type: TAG_TYPES.TOOL},
         ],
         url: "https://github.com/alain-cheng/Project-Irys",
         timeFrame: "JAN 2026 — NOW",
@@ -28,7 +30,7 @@ export const projectList = [
             {text: "TypeScript", type: TAG_TYPES.LANGUAGE }, 
             {text: "Next.js", type: TAG_TYPES.FRAMEWORK }, 
             {text: "Material UI", type: TAG_TYPES.LIBRARY }, 
-            {text: "Contentful", type: TAG_TYPES.TOOL },
+            {text: "Contentful CMS", type: TAG_TYPES.TOOL },
         ],
         url: "https://github.com/alain-cheng/gcakes-fe",
         timeFrame: "FEB 2023 — APR 2023",
@@ -40,6 +42,7 @@ export const projectList = [
         tags: [
             {text: "Android Studio", type: TAG_TYPES.TOOL }, 
             {text: "Java", type: TAG_TYPES.LANGUAGE }, 
+            {text: "Kotlin", type: TAG_TYPES.LANGUAGE },
             {text: "Godot", type: TAG_TYPES.TOOL },
         ],
         url: "https://github.com/alain-cheng/MOBDEVE-MP",

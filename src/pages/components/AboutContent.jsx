@@ -8,11 +8,12 @@ function AboutContent() {
             sx={{
                 display: 'flex',
                 alignItems: 'center',
-                margin: '50vh 25vw 0 25vw',
+                margin: '50vh 20vw',
 
                 '@media (max-width: 768px)': {
                     mt: '15vh',
-                    mx: '5vw',
+                    margin: '50vh 0 5vh 0',
+                    px: 0,
                 },
             }}
         >

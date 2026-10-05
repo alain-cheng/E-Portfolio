@@ -49,6 +49,13 @@ const ExperienceCard = ({title, company, description, timeFrame, tags, url}) => 
                         borderColor: isHovered ? 'var(--highlight-color-2)' : '',
                         cursor: 'pointer',
                         transition: '0.5s',
+                        maxWidth: '100%',
+
+                        '@media (max-width: 768px)': {
+                            flexDirection: 'column',
+                            gap: 1,
+                            borderRadius: 0,
+                        }
                     }}
                 >
                     <Typography
@@ -56,6 +63,10 @@ const ExperienceCard = ({title, company, description, timeFrame, tags, url}) => 
                             fontSize: '12px',
                             minWidth: '125px',
                             opacity: 0.75,
+
+                            '@media (max-width: 768px)': {
+                                minWidth: 0
+                            }
                         }}
                     >
                         {timeFrame}
@@ -66,6 +77,7 @@ const ExperienceCard = ({title, company, description, timeFrame, tags, url}) => 
                             display: 'flex',
                             flexDirection: 'column',
                             gap: 1,
+                            minWidth: 0,
                         }}
                     >   
                         <Typography

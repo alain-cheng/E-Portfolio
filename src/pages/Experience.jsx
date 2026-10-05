@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
+import { MotionGlobalConfig } from "framer-motion";
 import * as motion from "framer-motion/client";
 import { Box, Container, Typography } from "@mui/material";
 import { experienceList } from "../lists/experienceList";
 import ExperienceCard from "./components/ExperienceCard";
 
+
 function Experience() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        setIsMobile(mediaQuery.matches);
+    }, [])
+
     const cardVariants = {
         offscreen: {
             scale: 0,
@@ -22,7 +32,7 @@ function Experience() {
         <Box
             id='Experience'
             sx={{
-                width: '100%', 
+                width: '100%',
                 display: 'flex', 
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -33,9 +43,15 @@ function Experience() {
             {/* Heading */}
             <Box
                 sx={{
-                    height: '20vh',
-                    width: '50vw',
+                    width: '100%',
+                    maxWidth: '600px',
+                    boxSizing: 'border-box',
                     textAlign: 'left',
+                    '@media (max-width: 768px)': {
+                        height: 'auto',
+                        marginBottom: '2rem',
+                        paddingX: '1rem',
+                    },
                 }}
             >
                 <Typography variant="h4">
@@ -52,11 +68,15 @@ function Experience() {
                     gap: 2,
                     width: '600px',
                     padding: '0px 0px',
+
+                    '@media (max-width: 768px)': {
+                        width: '100%',
+                    }
                 }}
             >
                 {experienceList.map((experience, index) => (
                     <motion.div
-                        initial="offscreen"
+                        initial={isMobile ? false : "offscreen"}
                         whileInView="onscreen"
                         viewport={{ once: false, amount: 0.3 }}
                         variants={cardVariants}

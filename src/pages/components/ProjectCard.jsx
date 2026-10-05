@@ -8,7 +8,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 import { TAG_TYPES } from "../../constants/TAG_TYPES";
 
-const ProjectCard = ({ title, img, body, tags, url, timeFrame }) => {
+const ProjectCard = ({ title, img, body, tags, url, timeFrame, isMobile }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const theme = createTheme({
@@ -114,28 +114,85 @@ const ProjectCard = ({ title, img, body, tags, url, timeFrame }) => {
                     )}
                 </Box>
             </CardContent>
-
         </ThemeProvider>
     )
-    
-    const thumbnail = (
-        <Fragment>
-            <Box
-                component="img"
+
+    const cardContentMobile = (
+        <ThemeProvider theme={theme}>
+            <CardContent
                 sx={{
-                    width: '190px',
-                    height: '100px',
-                    objectFit: 'cover',
-                    borderRadius: '8px',
-                    '@media (max-width: 1200px)': {
-                        display: 'none',
-                    },
-                    zIndex: 1,
+                    paddingX: 0,
                 }}
-                alt="thumbnail"
-                src={img}
-            />
-        </Fragment>
+            >
+                <Box sx={{padding: '5px 4px'}}>
+                    <Typography
+                        variant="h6"
+                        sx={{
+                            color: 'var(--text-color)',
+                        }}
+                    >
+                        {title}
+                    </Typography>
+
+                    <Typography
+                        sx={{
+                            fontSize: '12px',
+                            opacity: 0.75,
+                            color: 'var(--text-color)',
+                        }}
+                    >
+                        {timeFrame}
+                    </Typography>
+                </Box>
+
+                <Box
+                    component="img"
+                    src={img}
+                    alt={title}
+                    sx={{
+                        width: '100%',
+                        aspectRatio: '16/9',
+                        objectFit: 'cover',
+                        display: 'block',
+                    }}
+                />
+
+                <Box sx={{ padding: '10px 4px' }}>
+                    <Typography
+                        sx={{
+                            marginTop: '8px',
+                            fontSize: '14px',
+                            color: 'var(--text-color)',
+                        }}
+                    >
+                        {body}
+                    </Typography>
+
+                    <Box sx={{ marginTop: '12px' }}>
+                        {tags.map((tag, index) => (
+                            <Chip
+                                key={index}
+                                sx={{
+                                    margin: '0.3em 0.3em',
+                                    paddingX: '5px',
+                                }}
+                                label={tag.text}
+                                color={
+                                    tag.type === TAG_TYPES.STATUS
+                                        ? 'secondary'
+                                        : 'primary'
+                                }
+                                icon={
+                                    tag.type === TAG_TYPES.STATUS
+                                        ? <CircleIcon sx={{ fontSize: '10px' }} />
+                                        : undefined
+                                }
+                            />
+                        ))}
+                    </Box>
+                </Box>
+            </CardContent>
+        </ThemeProvider>
     )
 
     return(
@@ -145,56 +202,86 @@ const ProjectCard = ({ title, img, body, tags, url, timeFrame }) => {
                 transition: '0.5s',
             }}
         >
-            <Box 
-                sx={{ 
-                    position: 'relative',
-                    display: 'flex',
-                    width: 'auto',
-                    marginY: '10px',
-                    paddingX: '1px',
-                }}
-            >
-                <Box 
-                    sx={{ 
-                        width: '600px',
-                    }} 
+            {isMobile ? (
+                <Box
+                    sx={{
+                        display: 'none',
+
+                        '@media (max-width: 768px)': {
+                            display: 'block',
+                            width: '100%',
+                            marginY: '16px',
+                        },
+                    }}
                 >
-                    <Card 
-                        onMouseEnter={() => setIsHovered(true)}
-                        onMouseLeave={() => setIsHovered(false)}
+                    <Card
                         onClick={handleClick}
                         sx={{
-                            height: '300px',
-                            backgroundImage: `url(${img})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat',
-
-                            "&::before": {
-                                content: '""',
-                                position: 'absolute',
-                                inset: 0,
-                                backgroundColor: 'rgba(26, 24, 36, 0)',
-                                transition: 'background-color 0.5s ease',
-                                zIndex: 1,
-                            },
-                            
-                            "&:hover::before": {
-                                backgroundColor: 'rgba(26, 24, 36, 0.7)',
-                            },
-
-                            "& > *": {
-                                position: 'relative',
-                                zIndex: 2,
-                            },
-
-                            cursor: 'pointer',
+                            width: '100%',
+                            boxShadow: 'none',
+                            background: 'transparent',
                         }}
                     >
-                        {cardContent}
+                        {cardContentMobile}
                     </Card>
                 </Box>
-            </Box>
+            ): (
+                <Box 
+                    sx={{ 
+                        position: 'relative',
+                        display: 'flex',
+                        width: 'auto',
+                        marginY: '10px',
+                        paddingX: '1px',
+                    }}
+                >
+                    <Box 
+                        sx={{ 
+                            width: '600px',
+                            maxWidth: '100%',
+                        }} 
+                    >
+                        <Card 
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                            onClick={handleClick}
+                            sx={{
+                                height: '300px',
+                                backgroundImage: `url(${img})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+
+                                "&::before": {
+                                    content: '""',
+                                    position: 'absolute',
+                                    inset: 0,
+                                    backgroundColor: 'rgba(26, 24, 36, 0)',
+                                    transition: 'background-color 0.5s ease',
+                                    zIndex: 1,
+                                },
+                                
+                                "&:hover::before": {
+                                    backgroundColor: 'rgba(26, 24, 36, 0.7)',
+                                },
+
+                                "& > *": {
+                                    position: 'relative',
+                                    zIndex: 2,
+                                },
+
+                                cursor: 'pointer',
+
+                                '@media (max-width: 768px)': {
+                                    height: '220px'
+                                },
+                            }}
+                        >
+                            {cardContent}
+                        </Card>
+                    </Box>
+                </Box>
+            )}
         </motion.div>
     );
 }
