@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/E-Portfolio/static/css/main.045cad0b.css",
-    "main.js": "/E-Portfolio/static/js/main.5ccc1f3c.js",
+    "main.css": "/E-Portfolio/static/css/main.70ab581c.css",
+    "main.js": "/E-Portfolio/static/js/main.d1215440.js",
     "static/media/donuteating.gif": "/E-Portfolio/static/media/donuteating.5f930813e5f8d64ad1d7.gif",
     "static/media/bg-texture.jpg": "/E-Portfolio/static/media/bg-texture.84e60e7eeb156c225494.jpg",
     "static/media/gcakes.png": "/E-Portfolio/static/media/gcakes.a7b56c3ae68661bd18bd.png",
@@ -24,11 +24,11 @@
     "static/media/3.jpg": "/E-Portfolio/static/media/3.6762202d9d499124cf8e.jpg",
     "static/media/Thumbnail.svg": "/E-Portfolio/static/media/Thumbnail.ed4ce94f364d10397d350366e5bfd063.svg",
     "index.html": "/E-Portfolio/index.html",
-    "main.045cad0b.css.map": "/E-Portfolio/static/css/main.045cad0b.css.map",
-    "main.5ccc1f3c.js.map": "/E-Portfolio/static/js/main.5ccc1f3c.js.map"
+    "main.70ab581c.css.map": "/E-Portfolio/static/css/main.70ab581c.css.map",
+    "main.d1215440.js.map": "/E-Portfolio/static/js/main.d1215440.js.map"
   },
   "entrypoints": [
-    "static/css/main.045cad0b.css",
-    "static/js/main.5ccc1f3c.js"
+    "static/css/main.70ab581c.css",
+    "static/js/main.d1215440.js"
   ]
 }
