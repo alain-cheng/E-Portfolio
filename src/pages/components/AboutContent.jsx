@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as motion from "framer-motion/client";
 import { Box, Container, Typography } from "@mui/material";
+import { MOBILE_BREAKPOINT } from "../../constants/MOBILE_BREAKPOINT";
 
 function AboutContent() {
     return(
@@ -10,7 +11,7 @@ function AboutContent() {
                 alignItems: 'center',
                 margin: '50vh 20vw',
 
-                '@media (max-width: 768px)': {
+                [`@media (max-width: ${MOBILE_BREAKPOINT}px)`]: {
                     mt: '15vh',
                     margin: '50vh 0 5vh 0',
                     px: 0,

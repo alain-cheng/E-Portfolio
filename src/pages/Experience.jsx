@@ -4,13 +4,14 @@ import * as motion from "framer-motion/client";
 import { Box, Container, Typography } from "@mui/material";
 import { experienceList } from "../lists/experienceList";
 import ExperienceCard from "./components/ExperienceCard";
+import { MOBILE_BREAKPOINT } from "../constants/MOBILE_BREAKPOINT";
 
 
 function Experience() {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        const mediaQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
         setIsMobile(mediaQuery.matches);
     }, [])
 
@@ -47,7 +48,8 @@ function Experience() {
                     maxWidth: '600px',
                     boxSizing: 'border-box',
                     textAlign: 'left',
-                    '@media (max-width: 768px)': {
+                    mb: '5vh',
+                    [`@media (max-width: ${MOBILE_BREAKPOINT}px)`]: {
                         height: 'auto',
                         marginBottom: '2rem',
                         paddingX: '1rem',
@@ -69,7 +71,7 @@ function Experience() {
                     width: '600px',
                     padding: '0px 0px',
 
-                    '@media (max-width: 768px)': {
+                    [`@media (max-width: ${MOBILE_BREAKPOINT}px)`]: {
                         width: '100%',
                     }
                 }}

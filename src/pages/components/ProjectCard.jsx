@@ -7,6 +7,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 import { TAG_TYPES } from "../../constants/TAG_TYPES";
+import { MOBILE_BREAKPOINT } from "../../constants/MOBILE_BREAKPOINT";
 
 const ProjectCard = ({ title, img, body, tags, url, timeFrame, isMobile }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -207,7 +208,7 @@ const ProjectCard = ({ title, img, body, tags, url, timeFrame, isMobile }) => {
                     sx={{
                         display: 'none',
 
-                        '@media (max-width: 768px)': {
+                        [`@media (max-width: ${MOBILE_BREAKPOINT}px)`]: {
                             display: 'block',
                             width: '100%',
                             marginY: '16px',
@@ -272,7 +273,7 @@ const ProjectCard = ({ title, img, body, tags, url, timeFrame, isMobile }) => {
 
                                 cursor: 'pointer',
 
-                                '@media (max-width: 768px)': {
+                                [`@media (max-width: ${MOBILE_BREAKPOINT}px)`]: {
                                     height: '220px'
                                 },
                             }}

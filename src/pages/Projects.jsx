@@ -3,13 +3,14 @@ import * as motion from "framer-motion/client";
 import ProjectCard from "./components/ProjectCard";
 import { Box, Typography } from "@mui/material";
 import { projectList } from "../lists/projectList";
+import { MOBILE_BREAKPOINT } from "../constants/MOBILE_BREAKPOINT";
 
 
 function Projects() {
     const [isMobile, setIsMobile] = useState(false);
     
     useEffect(() => {
-        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        const mediaQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
         setIsMobile(mediaQuery.matches);
     }, [])
 
@@ -46,7 +47,7 @@ function Projects() {
                     maxWidth: '600px',
                     boxSizing: 'border-box',
                     textAlign: 'left',
-                    '@media (max-width: 768px)': {
+                    [`@media (max-width: ${MOBILE_BREAKPOINT}px)`]: {
                         height: 'auto',
                         marginBottom: '2rem',
                         paddingX: '1rem',

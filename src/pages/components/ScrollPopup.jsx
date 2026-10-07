@@ -3,6 +3,7 @@ import * as motion from "framer-motion/client";
 import { Box } from '@mui/material';
 import SocialIcon from './SocialIcon';
 import { socials } from '../../socials';
+import { MOBILE_BREAKPOINT } from '../../constants/MOBILE_BREAKPOINT';
 
 const ScrollPopup = ({ show }) => {
     const visible = {
@@ -25,7 +26,7 @@ const ScrollPopup = ({ show }) => {
                     bottom: '5%',
                     left: '5%',
 
-                    '@media (max-width: 768px)': {
+                    [`@media (max-width: ${MOBILE_BREAKPOINT}px)`]: {
                         visibility: 'hidden',
                     }
                 }}

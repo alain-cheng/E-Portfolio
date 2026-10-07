@@ -4,6 +4,7 @@ import { ThemeProvider } from "@emotion/react";
 import { Box, CardContent, Chip, Container, createTheme, Typography } from "@mui/material"
 import CircleIcon from '@mui/icons-material/Circle';
 import { TAG_TYPES } from "../../constants/TAG_TYPES";
+import { MOBILE_BREAKPOINT } from "../../constants/MOBILE_BREAKPOINT";
 
 
 const ExperienceCard = ({title, company, description, timeFrame, tags, url}) => {
@@ -51,7 +52,7 @@ const ExperienceCard = ({title, company, description, timeFrame, tags, url}) => 
                         transition: '0.5s',
                         maxWidth: '100%',
 
-                        '@media (max-width: 768px)': {
+                        [`@media (max-width: ${MOBILE_BREAKPOINT}px)`]: {
                             flexDirection: 'column',
                             gap: 1,
                             borderRadius: 0,
@@ -64,7 +65,7 @@ const ExperienceCard = ({title, company, description, timeFrame, tags, url}) => 
                             minWidth: '125px',
                             opacity: 0.75,
 
-                            '@media (max-width: 768px)': {
+                            [`@media (max-width: ${MOBILE_BREAKPOINT}px)`]: {
                                 minWidth: 0
                             }
                         }}

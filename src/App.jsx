@@ -10,17 +10,26 @@ import Extra from "./pages/Extra";
 // styling
 import "./styles/App.css";
 
+import { MOBILE_BREAKPOINT } from "./constants/MOBILE_BREAKPOINT";
+
 function App() {
   // disable animations on mobile
   useEffect(() => {
-    const isMobile = window.matchMedia("(max-width: 768px").matches;
+    const isMobile = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches;
     MotionGlobalConfig.skipAnimations = isMobile;
   }, [])
 
-  // reload page on viewport size change
+  // reload page on viewport size change between mobile and desktop
   useEffect(() => {
+        let isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+
         const handleResize = () => {
+          const isCurrentMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+
+          if (isCurrentMobile !== isMobile) {
+            isMobile = isCurrentMobile;
             window.location.reload();
+          }
         };
 
         window.addEventListener('resize', handleResize);
@@ -28,7 +37,7 @@ function App() {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []);
+  }, []);
 
   return (
       <div className="App">

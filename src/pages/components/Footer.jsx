@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Box, Container, Typography } from "@mui/material";
+import { MOBILE_BREAKPOINT } from '../../constants/MOBILE_BREAKPOINT';
+import { LAST_UPDATED } from '../../constants/LAST_UPDATED';
 
 function Footer() {
-    const LAST_UPDATED = "October 5, 2026"; //
 
     return(
         <Box
@@ -12,7 +13,7 @@ function Footer() {
                 justifyContent: 'center',
                 margin: '5vh 25vw',
 
-                '@media (max-width: 768px)': {
+                [`@media (max-width: ${MOBILE_BREAKPOINT}px)`]: {
                     mx: 0,
                 }
             }}
